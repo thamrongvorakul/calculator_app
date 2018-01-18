@@ -1,0 +1,35 @@
+<div class="container container_customs" style="margin-top:15px;">
+
+    <legend>Select your data.</legend>
+    <table class="table table-hover table_tracking">
+        <thead>
+            <tr>
+                <th style="text-align:center;">Input A</th>
+                <th style="text-align:center;">Operator</th>
+                <th style="text-align:center;">Input B</th>
+                <th style="text-align:center;">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in THIS.saveData" style="text-align:center;cursor:pointer;" ng-click="THIS.selectRow(item)" ng-if="!THIS.loading">
+                <td>{{item.inputA}}</td>
+                <td>
+                    {{item.type == 'plus' ?"+" : item.type == 'minus' ?"-" : item.type == 'by' ?"X" : item.type == 'divided'?"/" : item.type
+                    == 'pow'?"pow" : unknown }}
+                </td>
+                <td>{{item.inputB}}</td>
+                <td>{{item.total | currency : ""}}</td>
+            </tr>
+            <tr ng-if="THIS.saveData.length == 0 && !THIS.loading">
+                <td colspan="12" class="text-center" style="padding:10px;">NO DATA</td>
+            </tr>
+            <tr ng-if="THIS.loading">
+                <td colspan="12" class="text-center" style="padding:10px;">Loading data . . .</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="row" align="center">
+        <button class="btn btn-sm btn-default" ng-click="$dismiss('cancel');" style="cursor:pointer;">Close</button>
+    </div>
+</div>

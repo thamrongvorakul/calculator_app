@@ -1,0 +1,26 @@
+{
+  "name": "Calculator",
+  "version": "1.0.0",
+  "description": "Electron calculator application",
+  "main": "CalcApp.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/thamrongvorakul/calc_app",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.7.8"
+  },
+  "dependencies": {
+    "bower": "^1.8.2",
+    "electron-context-menu": "^0.9.1"
+  }
+}

@@ -1,0 +1,112 @@
+/*
+ * Template Name: Unify - Responsive Bootstrap Template
+ * Description: Business, Corporate, Portfolio, E-commerce, Blog and One Page Template.
+ * Version: 1.9
+ * Author: @htmlstream
+ * Website: http://htmlstream.com
+*/
+
+
+/*Thematic Break
+------------------------------------*/
+
+* {
+    font-family: 'Kanit', sans-serif;
+}
+
+.operator_icon {
+    font-size: 20px;
+    padding: 5px 10px;
+    border: 1px solid #6d65e0;
+    border-radius: 10px;
+}
+
+.mandatory_val {
+    border: 1px solid red;
+}
+
+.hl_total {
+    border: 1px solid green;
+}
+
+.operator_hl {
+    border: 1px solid #d0d24a;
+}
+
+.container_customs {
+    margin-bottom: 10%;
+    margin-right: 10px;
+}
+
+.first_row {
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.label_input_style {
+    margin-top: 8px !important;
+    text-align: right;
+}
+
+.input_style {
+    text-align: right;
+    border-radius: 5px;
+}
+
+.total_style {
+    height: 60px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 24px;
+    text-align: right;
+    background-color: white !important;
+}
+
+.load_btn_custom {
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.save_btn_custom {
+    border-radius: 5px;
+    border: 1px solid #514fc5;
+}
+
+.clear_btn_custom {
+    border-radius: 5px;
+    border: 1px solid #ff8137;
+}
+.move_icon_up {
+    padding-top: 0%
+}
+
+.move_icon_down {
+    padding-top: 10%
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.table_tracking>thead>tr>th {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(1, #ffffff));
+    border-right: 1px solid;
+    border-color: #d4d4d4;
+    border: 1px solid #d4d4d4;
+	border-top:1px solid #d4d4d4 !important;
+    text-align: center;
+}
+
+.table_tracking>tbody>tr>td{
+    border-right: 1px solid #d4d4d4;
+	border-left:1px solid #d4d4d4;
+    border-top:1px solid #d4d4d4;
+	border-bottom:1px solid #d4d4d4 !important;
+    
+    padding : 3px;
+    vertical-align: middle;
+}

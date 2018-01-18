@@ -1,0 +1,1 @@
+{"total":"400.00","isCloudSave":false,"authenName":"A","uid":"5a60afc15c03bb769fe5e7b7","inputA":200,"type":"by","inputB":2}

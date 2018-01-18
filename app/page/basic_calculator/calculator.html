@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="CalculatorApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TASK 1</title>
+    <link rel="stylesheet" href="../../lib/angular-ui-notification/dist/angular-ui-notification.min.css" type="text/css">
+    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../../css/font.css" type="text/css">
+    <link rel="stylesheet" href="../../css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="../../css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="../../css/app.css" type="text/css">
+
+
+    <script src="../../lib/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="../../lib/angular/angular.min.js"></script>
+    <script src="../../lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../../lib/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
+
+    <script src="../../core/corefunc.module.js"></script>
+    <script src="calculator.component.js"></script>
+
+</head>
+
+<body ng-controller="CalculatorController" style="overflow-y:hidden;overflow-x:hidden;">
+
+    <div class="row" style="margin-top:10px;margin-left:5px;">
+        <a href="../../index.html">Home</a>
+    </div>
+
+    <div class="container container_customs" style="margin-top:10%;">
+
+        <div class="row" style="margin-bottom:10px;">
+            <div class="col-xs-4 label_input_style">
+                Input A :
+            </div>
+            <div class="col-xs-8">
+                <input type="number" class="form-control input_style" ng-model="objValue.inputA" ng-class="{'mandatory_val' : !objValue.inputA}"
+                    ng-change="inputChange(objValue.inputA,objValue.inputB,objValue.type)" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 label_input_style">
+                Input B :
+            </div>
+            <div class="col-xs-8">
+                <input type="number" class="form-control input_style" ng-model="objValue.inputB" ng-class="{'mandatory_val' : !objValue.inputB}"
+                    ng-change="inputChange(objValue.inputA,objValue.inputB,objValue.type)" />
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+            <div class="col-xs-12" style="text-align:right;">
+                <button class="btn btn-sm btn-default operator_icon" ng-click="operateValue(objValue.inputA , objValue.inputB , 'plus')"
+                    ng-class="{'operator_hl': objValue.type == 'plus'}">
+                    <img src="https://png.icons8.com/material/50/000000/plus-math.png" width="20px"> </button>
+                <button class="btn btn-sm btn-default operator_icon" ng-click="operateValue(objValue.inputA , objValue.inputB , 'minus')"
+                    ng-class="{'operator_hl': objValue.type == 'minus'}">
+                    <img src="https://png.icons8.com/material/50/000000/minus.png" width="20px"> </button>
+                <button class="btn btn-sm btn-default operator_icon" ng-click="operateValue(objValue.inputA , objValue.inputB , 'by')" ng-class="{'operator_hl': objValue.type == 'by'}">
+                    <img src="https://png.icons8.com/material/50/000000/multiply.png" width="20px"> </button>
+                <button class="btn btn-sm btn-default operator_icon" ng-click="operateValue(objValue.inputA , objValue.inputB , 'divided')"
+                    ng-class="{'operator_hl': objValue.type == 'divided'}">
+                    <img src="https://png.icons8.com/material/50/000000/divide.png" width="20px"> </button>
+                <button class="btn btn-sm btn-default operator_icon" ng-click="operateValue(objValue.inputA , objValue.inputB , 'pow')" ng-class="{'operator_hl': objValue.type == 'pow'}">Pow</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4" style="font-size: 26px;padding-top: 20px;text-align: right;">
+                Result :
+            </div>
+            <div class="col-xs-8">
+                <input type="text" class="form-control total_style" ng-model="objValue.total" disabled ng-class="{'hl_total' : objValue.total > 0 || objValue.total < 0}"
+                />
+            </div>
+        </div>
+
+        <hr style="margin-top:10px;margin-bottom:10px;">
+        <div class="row" style="margin-top:10px;">
+            <div class="col-xs-offset-2 col-xs-10" align="right">
+                <button class="btn btn-md btn-default load_btn_custom" ng-click="loadFile();">Load</button>
+                <button class="btn btn-md btn-default save_btn_custom" ng-click="saveFile();">Save</button>
+                <button class="btn btn-md btn-default clear_btn_custom" ng-click="objValue = {};objValue.total = 0">Clear</button>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "Task1_App",
+  "description": "A minimal Electron application",
+  "main": "CalcApp.js",
+  "authors": [
+    "GitHub"
+  ],
+  "license": "CC0-1.0",
+  "keywords": [
+    "test"
+  ],
+  "homepage": "https://github.com/electron/electron-quick-start",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
