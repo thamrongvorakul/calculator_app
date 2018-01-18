@@ -104,4 +104,4 @@ angular.module('CalculatorApp', [
             }
         }
 
-    }).
+    })
