@@ -18,7 +18,8 @@ angular.module('CloudCalculatorApp', [
             isCloudSave: false
         };
         var pathStoredFile = './app/tempFile/';
-        var baseUrl = "http:///203.170.129.80:4774/calc_test/";
+        // var baseUrl = "http://35.186.153.185:4774/calc_test/";
+        var baseUrl = "http://localhost:4774/calc_test/";
 
         $scope.saveAuthen = function (nameInput) {
             var _option = {
@@ -171,10 +172,10 @@ angular.module('CloudCalculatorApp', [
                     function getDataById() {
                         THIS.loading = true;
 
+                        var data = JSON.stringify({uid : uid});
                         var _option = {
-                            method: 'POST',
-                            url: baseUrl + "public/pub_service/load_data",
-                            data: { uid: uid },
+                            method: 'GET',
+                            url: baseUrl + "public/pub_service/load_data/"+data,
                             headers: {}
                         };
 
