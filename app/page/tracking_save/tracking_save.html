@@ -11,14 +11,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in THIS.saveData" style="text-align:center;cursor:pointer;" ng-click="THIS.selectRow(item)" ng-if="!THIS.loading">
-                <td>{{item.inputA}}</td>
-                <td>
+            <tr ng-repeat="item in THIS.saveData" style="text-align:center;cursor:pointer;"  ng-if="!THIS.loading">
+                <td ng-click="THIS.selectRow(item)">{{item.inputA}}</td>
+                <td ng-click="THIS.selectRow(item)">
                     {{item.type == 'plus' ?"+" : item.type == 'minus' ?"-" : item.type == 'by' ?"X" : item.type == 'divided'?"/" : item.type
                     == 'pow'?"pow" : unknown }}
                 </td>
-                <td>{{item.inputB}}</td>
-                <td>{{item.total | currency : ""}}</td>
+                <td ng-click="THIS.selectRow(item)">{{item.inputB}}</td>
+                <td ng-click="THIS.selectRow(item)">{{item.total | currency : ""}}</td>
+                <td >
+                    <i class="fa fa-trash-o" style="color:red;" ng-click="THIS.deleteLoadDate(item)"></i>
+                </td>
+
             </tr>
             <tr ng-if="THIS.saveData.length == 0 && !THIS.loading">
                 <td colspan="12" class="text-center" style="padding:10px;">NO DATA</td>

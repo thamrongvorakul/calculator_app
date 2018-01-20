@@ -18,8 +18,8 @@ angular.module('CloudCalculatorApp', [
             isCloudSave: false
         };
         var pathStoredFile = './app/tempFile/';
-        // var baseUrl = "http://35.186.153.185:4774/calc_test/";
-        var baseUrl = "http://localhost:4774/calc_test/";
+        var baseUrl = "http://35.186.153.185:4774/calc_test/";
+        // var baseUrl = "http://localhost:4774/calc_test/";
 
         $scope.saveAuthen = function (nameInput) {
             var _option = {
@@ -169,13 +169,13 @@ angular.module('CloudCalculatorApp', [
                     var THIS = this;
                     THIS.loading = false;
 
-                    function getDataById() {
+                    function getDataByuid() {
                         THIS.loading = true;
-
-                        var data = JSON.stringify({uid : uid});
+                        THIS.saveData ;
+                        var data = JSON.stringify({ uid: uid });
                         var _option = {
                             method: 'GET',
-                            url: baseUrl + "public/pub_service/load_data/"+data,
+                            url: baseUrl + "public/pub_service/load_data/" + data,
                             headers: {}
                         };
 
@@ -191,10 +191,29 @@ angular.module('CloudCalculatorApp', [
                                 Notification.error({ message: "FAILED" })
                             });
                     }
-                    getDataById();
+                    getDataByuid();
 
                     THIS.selectRow = function (data) {
                         $uibModalInstance.close(data);
+                    }
+
+                    THIS.deleteLoadDate = function (data) {
+                        var _option = {
+                            method: 'DELETE',
+                            url: baseUrl + "public/pub_service/delete_data/" + uid + "/data_loads/" + data._id,
+                            headers: {}
+                        };
+
+                        $http(_option)
+                            .then(function (result) {
+                                if (result.data.ERROR == '500') {
+                                    Notification.error({ message: "FAILED" })
+                                } else {
+                                    getDataByuid();
+                                }
+                            }).catch(function (e) {
+                                Notification.error({ message: "FAILED" })
+                            });
                     }
                 },
                 controllerAs: "THIS"
